@@ -1,5 +1,5 @@
 """
-Django settings for scaffold project.
+Django settings for robkuk project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -79,12 +79,12 @@ SECURE_CHECKS = [
     "djangosecure.check.djangosecure.check_sts",
     "djangosecure.check.djangosecure.check_frame_deny",
     "djangosecure.check.djangosecure.check_ssl_redirect",
-    "scaffold.settings.check_session_csrf_enabled"
+    "robkuk.settings.check_session_csrf_enabled"
 ]
 
-ROOT_URLCONF = 'scaffold.urls'
+ROOT_URLCONF = 'robkuk.urls'
 
-WSGI_APPLICATION = 'scaffold.wsgi.application'
+WSGI_APPLICATION = 'robkuk.wsgi.application'
 
 
 # Internationalization
