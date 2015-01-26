@@ -1,0 +1,40 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-weight: 200;
+	background-color: white;
+}
+
+h1,h2,h3 {
+	font-family: 'Lobster', cursive;
+	font-weight: normal;
+	margin: 0;
+}
+
+aside {
+	position: absolute;
+	left: 0px;
+	height: 100%;
+	width: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+footer {
+	position: absolute;
+	bottom: 0px;
+	left; 0px;
+}
+
+footer p {
+	margin: 0;
+}
+
+article {
+	background-image: url("/static/img/hero/yosemite.jpg");
+	background-size: 100%;
+
+	padding-left: 150px;
+	width: 100%;
+	box-sizing: border-box;
+}
