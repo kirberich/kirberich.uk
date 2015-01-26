@@ -2,11 +2,11 @@
 import os
 import sys
 
-from robkuk.boot import fix_path
+from kirberichuk.boot import fix_path
 fix_path()
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "robkuk.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "kirberichuk.settings")
 
     from djangae.core.management import execute_from_command_line
 

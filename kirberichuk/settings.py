@@ -1,5 +1,5 @@
 """
-Django settings for robkuk project.
+Django settings for kirberich.uk project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -80,12 +80,12 @@ SECURE_CHECKS = [
     "djangosecure.check.djangosecure.check_sts",
     "djangosecure.check.djangosecure.check_frame_deny",
     "djangosecure.check.djangosecure.check_ssl_redirect",
-    "robkuk.settings.check_session_csrf_enabled"
+    "kirberichuk.settings.check_session_csrf_enabled"
 ]
 
-ROOT_URLCONF = 'robkuk.urls'
+ROOT_URLCONF = 'kirberichuk.urls'
 
-WSGI_APPLICATION = 'robkuk.wsgi.application'
+WSGI_APPLICATION = 'kirberichuk.wsgi.application'
 
 
 # Internationalization
