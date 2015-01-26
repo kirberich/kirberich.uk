@@ -1,4 +1,4 @@
-from robkuk.settings import *
+from kirberichuk.settings import *
 
 SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 2592000 #30 days
@@ -17,3 +17,4 @@ SECURE_REDIRECT_EXEMPT = [
 
 DEBUG = False
 TEMPLATE_DEBUG = False
+ALLOWED_HOSTS = ["kirberich-uk.appspot.com"]
