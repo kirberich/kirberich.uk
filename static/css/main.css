@@ -10,6 +10,7 @@ h1,h2,h3 {
 	font-family: 'Lobster', cursive;
 	font-weight: normal;
 	margin: 0;
+	color: rgb(50, 50, 50);
 }
 
 h1 {
@@ -64,7 +65,7 @@ article {
 	overflow: hidden;
 }
 
-article.dark header {
+article.dark header, article.dark header h2 {
 	color: white;
 }
 
@@ -120,6 +121,6 @@ article .main-image p {
 }
 
 #article-industry:before {
-	background: url("/static/img/hero/industry.jpg") 50% 20% no-repeat;
+	background: url("/static/img/hero/industry.jpg") 20% 20% no-repeat;
 	background-size: 120%;
 }
