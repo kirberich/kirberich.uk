@@ -108,8 +108,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-if DEBUG:
-    CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
+CSP_STYLE_SRC = ("'self'", "*.googleapis.com")
+CSP_FONT_SRC = ("'self'", "*.gstatic.com")
 
 
 from djangae.contrib.gauth.settings import *
