@@ -12,18 +12,46 @@ h1,h2,h3 {
 	margin: 0;
 }
 
+h1 {
+	margin: 10px;
+}
+
+article header h2 {
+	display: inline-block;
+}
+article header time {
+	margin-left: 5px;
+}
+
+.wrapper {
+	position: relative;
+}
+
 aside {
 	position: absolute;
 	left: 0px;
 	height: 100%;
 	width: 150px;
 	background-color: rgba(255, 255, 255, 0.5);
+	z-index: 1;
+}
+
+aside ul {
+	font-size: 1.5em;
+	padding: 0;
+	margin: 10px;
+}
+
+aside li {
+	list-style: none;
 }
 
 footer {
-	position: absolute;
+	text-align: center;
 	bottom: 0px;
-	left; 0px;
+	left: 0px;
+	padding: 10px;
+	opacity: 0.7;
 }
 
 footer p {
@@ -31,10 +59,55 @@ footer p {
 }
 
 article {
-	background-image: url("/static/img/hero/yosemite.jpg");
-	background-size: 100%;
-
-	padding-left: 150px;
 	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+article header {
+	text-align: center;
+}
+
+article .content{
+	position: relative;
+	padding-left: 160px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 400px;
 	box-sizing: border-box;
+}
+
+article:before {
+	content: "";
+	position: absolute;
+	background: url("/static/img/hero/yosemite.jpg") 40% 50% no-repeat;
+	background-size: 150%;
+
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	top: -5%;
+	left: -5%;
+	width: 110%;
+	height: 110%;
+	overflow: hidden;
+	opacity: 0.7;
+}
+
+article .main-image {
+	margin: 30px auto;
+	width: 70%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+article .main-image img {
+	width: 100%;
+	display: block;
+}
+
+article .main-image p {
+	margin: 0;
+	padding: 3px 5px;
 }
