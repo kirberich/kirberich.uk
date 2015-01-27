@@ -79,6 +79,14 @@ article.dark header, article.dark header h2 {
 	color: white;
 }
 
+article.unpublished {
+	opacity: 0.5;
+}
+
+article.unpublished:hover {
+	opacity: 1;
+}
+
 article header {
 	text-align: center;
 }

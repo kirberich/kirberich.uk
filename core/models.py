@@ -6,6 +6,7 @@ class Article(models.Model):
         ordering = ('-timestamp',)
     slug = models.CharField(max_length=100)
     name = models.CharField(max_length=255)
+    is_published = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     is_dark = models.BooleanField(default=False)
     background_img = models.FileField(blank=True, upload_to="/upload")
