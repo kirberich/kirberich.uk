@@ -45,6 +45,9 @@ aside {
 	width: 150px;
 	background-color: rgba(255, 255, 255, 0.5);
 	z-index: 1;
+
+	/* Solve weird chrome bug making semi-transparent white background gray */
+	transform: translateZ(0);
 }
 
 aside ul {
@@ -122,6 +125,9 @@ article .hero-image, article .content {
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.8);
 	border: 1px solid rgba(255, 255, 255, 0.5);
+
+	/* Solve weird chrome bug making semi-transparent white background gray */
+	transform: translateZ(0);
 }
 
 article .hero-image {
