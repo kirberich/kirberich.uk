@@ -3,7 +3,7 @@
 {% block extra_css %}
 {% for article in articles %}
 #article-{{article.slug}}:before {
-	background-image: url("{{article.background_img_url|default:article.hero_img_url}}");
+	background-image: url("{{article.get_background_url}}=s1400");
 	{% if article.background_img_extra_css %}{{article.background_img_extra_css}};{% endif %}
 }
 {% endfor %}
@@ -17,9 +17,9 @@
 			<h2>{{article.name}}</h2>
 			<time datetime="{{article.timestamp.isoformat}}">{{article.timestamp|date:"M d, Y"}}</time>
 		</header>
-		{% if article.hero_img_url %}
+		{% if article.hero_img.name or article.hero_img_url %}
 		<div class="hero-image{% if article.is_hero_portrait%} portrait{% endif %}">
-			<a href="{{article.hero_link_url|default:article.hero_img_url}}" target="_blank"><img src="{{article.hero_img_url}}" /></a>
+			<a href="{{article.hero_link_url}}" target="_blank"><img src="{{article.get_hero_url}}=s1400" /></a>
 			<p>{{article.hero_desc}}</p>
 		</div>
 		{% endif %}
