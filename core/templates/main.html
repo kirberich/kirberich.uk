@@ -2,12 +2,10 @@
 
 {% block extra_css %}
 {% for article in articles %}
-{% if article.is_published or request.user.is_superuser %}
 #article-{{article.slug}}:before {
 	background-image: url("{{article.get_background_url}}=s1400");
 	{% if article.background_img_extra_css %}{{article.background_img_extra_css}}{% endif %}
 }
-{% endif %}
 {% endfor %}
 {% endblock %}
 

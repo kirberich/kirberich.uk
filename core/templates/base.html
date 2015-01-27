@@ -27,7 +27,9 @@
 			<nav>
 				<ul>
 					{% for article in articles %}
+					{% if article.is_published or request.user.is_superuser %}
 					<li><a href="#article-{{article.slug}}">{{article.name}}</a></li>
+					{% endif %}
 					{% endfor %}
 				</ul>
 			</nav>
