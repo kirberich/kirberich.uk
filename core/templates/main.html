@@ -21,7 +21,7 @@
 		{% if article.hero_img.name or article.hero_img_url %}
 		<div class="hero-image{% if article.is_hero_portrait%} portrait{% endif %}">
 			<a href="{{article.get_hero_link_url}}" target="_blank"><img src="{{article.get_hero_url}}=s1400" /></a>
-			<p>{{article.hero_desc}}</p>
+			{% if article.hero_desc %}<p>{{article.hero_desc}}</p>{% endif %}
 		</div>
 		{% endif %}
 		{% if article.content %}
