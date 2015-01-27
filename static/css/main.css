@@ -152,9 +152,24 @@ article .hero-image p {
 	padding: 3px 5px;
 }
 
+article p {
+	margin: 2px;
+}
+
+article a {
+	color: rgb(50, 70, 150);
+}
+
+article a:hover {
+	text-decoration: underline;
+}
+
 article .content {
 	text-align: left;
 	display: inline-block;
-	padding: 0 10px;
+	padding: 10px;
 	box-sizing: border-box;
+	font-weight: 300;
+	font-size: 1.1em;
+	letter-spacing: 0.014em;
 }
