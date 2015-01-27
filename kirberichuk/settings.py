@@ -40,7 +40,9 @@ INSTALLED_APPS = (
     'csp',
     'djangae.contrib.gauth',
     'djangae', # Djangae should be after Django core/contrib things
+    'django_summernote',
     'core',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,8 +110,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-CSP_STYLE_SRC = ("'self'", "*.googleapis.com")
-CSP_FONT_SRC = ("'self'", "*.gstatic.com")
-
-
+CSP_STYLE_SRC = ("'self'", "'unsafe-inline'", "*.googleapis.com", "netdna.bootstrapcdn.com")
+CSP_FONT_SRC = ("'self'", "*.gstatic.com", "netdna.bootstrapcdn.com")
+CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline", "'unsafe-eval'", "code.jquery.com", "netdna.bootstrapcdn.com")
+CSP_IMG_SRC = ("*",)
+CSP_FRAME_SRC = ("'self'", "www.youtube.com",)
 from djangae.contrib.gauth.settings import *

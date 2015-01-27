@@ -4,6 +4,7 @@ html, body {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-weight: 200;
 	background-color: white;
+	min-width: 700px;
 }
 
 h1,h2,h3 {
@@ -17,11 +18,20 @@ h1 {
 	margin: 10px;
 }
 
+a {
+	text-decoration: none;
+	color: rgb(50, 50, 50);
+}
+
 article header h2 {
 	display: inline-block;
 }
 article header time {
 	margin-left: 5px;
+}
+
+.img-rounded {
+	border-radius: 5px;
 }
 
 .wrapper {
@@ -73,19 +83,21 @@ article header {
 	text-align: center;
 }
 
-article .content{
+article .article-wrapper{
 	position: relative;
 	padding-left: 160px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	min-height: 400px;
 	box-sizing: border-box;
+	text-align: center;
 }
 
 article:before {
 	content: "";
 	position: absolute;
 	background-size: 150%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
 
 	filter: blur(3px);
 	-webkit-filter: blur(3px);
@@ -97,30 +109,38 @@ article:before {
 	/*opacity: 0.7;*/
 }
 
-article .main-image {
+article .hero-image, article .content {
 	margin: 30px auto;
-	width: 70%;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.8);
 	border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-article .main-image img {
+article .hero-image {
+	text-align: left;
+	width: 70%;
+	max-width: 700px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+article .hero-image.portrait {
+	max-width: 400px;
+}
+
+article .hero-image img {
 	width: 100%;
 	display: block;
 }
 
-article .main-image p {
+article .hero-image p {
 	margin: 0;
 	padding: 3px 5px;
 }
 
-#article-yosemite:before {
-	background: url("/static/img/hero/yosemite.jpg") 40% 50% no-repeat;
-}
-
-#article-industry:before {
-	background: url("/static/img/hero/industry.jpg") 20% 20% no-repeat;
-	background-size: 120%;
+article .content {
+	text-align: left;
+	display: inline-block;
+	padding: 0 10px;
+	box-sizing: border-box;
 }

@@ -3,3 +3,4 @@ django>=1.6.10,<1.7
 django-secure
 django-csp
 django-session-csrf
+django-summernote

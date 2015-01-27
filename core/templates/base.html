@@ -8,6 +8,7 @@
 	<title>kirberich.uk</title>
 	<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
 	<link href='//fonts.googleapis.com/css?family=Lobster|Yanone+Kaffeesatz:700,300,200' rel='stylesheet' type='text/css'>
+	<style>{% block extra_css %}{% endblock %}</style>
 </head>
 
 <body>
@@ -19,41 +20,15 @@
 		<aside>
 			<nav>
 				<ul>
-					<li>Worp worp</li>
+					{% for article in articles %}
+					<li><a href="#article-{{article.slug}}">{{article.name}}</a></li>
+					{% endfor %}
 				</ul>
 			</nav>
 		</aside>
 
 		<main>
-			<section>
-
-				<article id="article-yosemite">
-					<div class="content">
-						<header>
-							<h2>Test article</h2>
-							<time datetime="2009-09-04T16:31:24+02:00">Jan 25, 2015</time>
-						</header>
-						<div class="main-image">
-						<img src="/static/img/hero/yosemite.jpg" />
-						<p>Forp forp forp</p>
-						</div>
-					</div>
-				</article>
-
-				<article id="article-industry" class="dark">
-					<div class="content">
-						<header>
-							<h2>Test article</h2>
-							<time datetime="2009-09-04T16:31:24+02:00">Jan 25, 2015</time>
-						</header>
-						<div class="main-image">
-						<img src="/static/img/hero/industry.jpg" />
-						<p>Forp forp forp</p>
-						</div>
-					</div>
-				</article>
-
-			</section>
+		{% block main_content %}{% endblock %}
 		</main>
 	</div>
 

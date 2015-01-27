@@ -1,1 +1,34 @@
 {% extends "base.html" %}
+
+{% block extra_css %}
+{% for article in articles %}
+#article-{{article.slug}}:before {
+	background-image: url("{{article.background_img_url|default:article.hero_img_url}}");
+	{% if article.background_img_extra_css %}{{article.background_img_extra_css}};{% endif %}
+}
+{% endfor %}
+{% endblock %}
+
+{% block main_content %}
+{% for article in articles %}
+<article id="article-{{article.slug}}" {% if article.is_dark%}class="dark"{% endif %}>
+	<div class="article-wrapper">
+		<header>
+			<h2>{{article.name}}</h2>
+			<time datetime="{{article.timestamp.isoformat}}">{{article.timestamp|date:"M d, Y"}}</time>
+		</header>
+		{% if article.hero_img_url %}
+		<div class="hero-image{% if article.is_hero_portrait%} portrait{% endif %}">
+			<a href="{{article.hero_link_url|default:article.hero_img_url}}" target="_blank"><img src="{{article.hero_img_url}}" /></a>
+			<p>{{article.hero_desc}}</p>
+		</div>
+		{% endif %}
+		{% if article.content %}
+		<div class="content">
+			{{article.content|safe}}
+		</div>
+		{% endif %}
+	</div>
+</article>
+{% endfor %}
+{% endblock %}
