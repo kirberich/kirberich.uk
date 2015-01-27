@@ -17,7 +17,7 @@ class Article(models.Model):
     hero_img_url = models.CharField(max_length=500, blank=True)
     is_hero_portrait = models.BooleanField(default=False)
     hero_link_url = models.CharField(max_length=500, blank=True)
-    hero_desc = models.CharField(max_length=500)
+    hero_desc = models.CharField(max_length=500, blank=True)
     content = models.TextField(blank=True)
 
     def __unicode__(self):
