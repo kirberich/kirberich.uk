@@ -36,3 +36,10 @@ class Article(models.Model):
         if self.hero_img.name:
             return self.hero_img.url
         return self.hero_img_url
+
+    def get_hero_link_url(self):
+        if self.hero_link_url:
+            return self.hero_link_url
+        if self.hero_img.name:
+            return self.hero_img.url + "=s0"
+        return self.hero_img_url
