@@ -8,10 +8,22 @@
 	<title>kirberich.uk</title>
 	<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
 	<link href='//fonts.googleapis.com/css?family=Lobster|Yanone+Kaffeesatz:700,300,200' rel='stylesheet' type='text/css'>
-	<style>{% block extra_css %}{% endblock %}</style>
+	<style>
+		article:before {
+			filter: url(#blur);
+		}
+		{% block extra_css %}{% endblock %}
+	</style>
 </head>
 
 <body>
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="0" width="0">
+  <defs>
+     <filter id="blur" x="0" y="0">
+       <feGaussianBlur stdDeviation="3" />
+     </filter>
+  </defs>
+</svg>
 	<header>
 		<h1>Robert Kirberich</h1>
 	</header>
