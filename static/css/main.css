@@ -134,12 +134,11 @@ article .hero-image, article .content {
 }
 
 article .hero-image {
-	margin: 30px auto;
+	margin: 30px 50px;
 	text-align: left;
-	width: 70%;
-	max-width: 700px;
-	border-top-left-radius: 0px;
-	border-top-right-radius: 0px;
+	display: inline-block;
+	max-width: 800px;
+	overflow: hidden;
 }
 
 article .hero-image.portrait {
