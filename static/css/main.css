@@ -168,7 +168,8 @@ article a:hover {
 }
 
 article .content {
-	margin: 20px auto;
+	vertical-align: top;
+	margin: 29px auto;
 	text-align: left;
 	display: inline-block;
 	padding: 0px 50px;
