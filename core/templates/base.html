@@ -53,6 +53,22 @@
 		ga('create', 'UA-59055576-1', 'auto');
 		ga('send', 'pageview');
 	</script>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+	$(function() {
+		var $nav = $("nav");
+		var navOffset = {'top':70, 'left':0};
+		$(document).scroll(function() {
+			var scrollTop = $("body").scrollTop();
+			var diff = navOffset.top - scrollTop;
+			if(diff < 5) {
+				$nav.offset({'left':0, 'top':scrollTop+5});
+			} else {
+				$nav.offset({'left':navOffset.left, 'top':navOffset.top});
+			}
+		});
+	});
+	</script>
 </body>
 
 </html>
