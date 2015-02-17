@@ -83,7 +83,11 @@ article {
 	overflow: hidden;
 }
 
-article.dark header, article.dark header h2 {
+article header a {
+	color: black;
+}
+
+article.dark header, article.dark header a, article.dark header h2 {
 	color: white;
 }
 

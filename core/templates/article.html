@@ -1,16 +1,12 @@
 {% extends "base.html" %}
 
 {% block extra_css %}
-{% for article in articles %}
 #article-{{article.slug}}:before {
 	background-image: url("{{article.get_background_url}}=s1400");
 	{% if article.background_img_extra_css %}{{article.background_img_extra_css}}{% endif %}
 }
-{% endfor %}
 {% endblock %}
 
 {% block main_content %}
-{% for article in articles %}
 {% include "article_content.html" %}
-{% endfor %}
 {% endblock %}

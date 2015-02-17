@@ -10,5 +10,5 @@ urlpatterns = patterns('',
     url(r'^_ah/', include('djangae.urls')),
     url(r'^admin/?', include(admin.site.urls)),
     url(r'^summernote/', include('django_summernote.urls')),
-    url(r'.*', include('core.urls')),
+    url(r'^', include('core.urls')),
 )

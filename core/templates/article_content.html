@@ -1,0 +1,21 @@
+{% if article.is_published or request.user.is_superuser %}
+<article id="article-{{article.slug}}" class="{% if article.is_dark%} dark{% endif %}{% if not article.is_published %} unpublished{% endif %}">
+	<div class="article-wrapper">
+		<header>
+			<h2>{% if site == 'main' %}<a href="/{{article.slug}}">{{article.name}}</a>{% else %}{{article.name}}{% endif %}</h2>
+			<time datetime="{{article.timestamp.isoformat}}">{{article.timestamp|date:"M d, Y"}}</time>
+		</header>
+		{% if article.hero_img.name or article.hero_img_url %}
+		<div class="hero-image{% if article.is_hero_portrait%} portrait{% endif %}">
+			<a href="{{article.get_hero_link_url}}" target="_blank"><img src="{{article.get_hero_url}}=s1400" /></a>
+			{% if article.hero_desc %}<p>{{article.hero_desc}}</p>{% endif %}
+		</div>
+		{% endif %}
+		{% if article.content %}
+		<div class="content">
+			{{article.content|safe}}
+		</div>
+		{% endif %}
+	</div>
+</article>
+{% endif %}
