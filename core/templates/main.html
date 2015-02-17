@@ -3,7 +3,7 @@
 {% block extra_css %}
 {% for article in articles %}
 #article-{{article.slug}}:before {
-	background-image: url("{{article.get_background_url}}=s1400");
+	{% if article.get_background_url %}background-image: url("{{article.get_background_url}}=s1400");{% endif %}
 	{% if article.background_img_extra_css %}{{article.background_img_extra_css}}{% endif %}
 }
 {% endfor %}
