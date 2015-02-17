@@ -16,7 +16,7 @@
 	</style>
 </head>
 
-<body>
+<body {% if site == "main" %}class="article-list"{% else %}class="has-expanded"{% endif %}>
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="0" width="0"><defs><filter id="blur" x="0" y="0"><feGaussianBlur stdDeviation="3" /></filter></defs></svg>
 	<header>
 		<h1><a href="/">Robert Kirberich</a></h1>
@@ -26,9 +26,16 @@
 		<aside>
 			<nav>
 				<ul>
-					{% for article in articles %}
-					{% if article.is_published or request.user.is_superuser %}
-					<li><a href="{% if site == "main" %}#article-{{article.slug}}{% else %}/{{article.slug}}{% endif %}">{{article.name}}</a></li>
+					{% for nav_article in articles %}
+					{% if nav_article.is_published or request.user.is_superuser %}
+					<li>
+						<a
+							href="{% if site == "main" %}#article-{{nav_article.slug}}{% else %}/{{nav_article.slug}}{% endif %}"
+							{% if article and nav_article == article %}class="active"{% endif %}
+						>
+							{{nav_article.name}}
+						</a>
+					</li>
 					{% endif %}
 					{% endfor %}
 				</ul>
@@ -55,11 +62,19 @@
 	</script>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
+
+	function checkHasExpanded() {
+		if($("article.expanded").length) {
+			$("body").addClass("has-expanded");
+		} else {
+			$("body").removeClass("has-expanded");
+		}
+	}
 	$(function() {
 		var $nav = $("nav");
 		var navOffset = {'top':70, 'left':0};
 		$(document).scroll(function() {
-			var scrollTop = $("body").scrollTop();
+			var scrollTop = $(document).scrollTop();
 			var diff = navOffset.top - scrollTop;
 			if(diff < 5) {
 				$nav.offset({'left':0, 'top':scrollTop+5});
@@ -67,6 +82,28 @@
 				$nav.offset({'left':navOffset.left, 'top':navOffset.top});
 			}
 		});
+
+		{% if site == "main" %}
+		$('article').click(function(e) {
+			if($(this).hasClass("expanded")) {
+				return;
+			}
+			e.preventDefault();
+			$(this).addClass("expanded");
+			checkHasExpanded();
+		});
+
+		$("nav a").click(function(e){
+			e.preventDefault();
+			var $article = $($(this).attr("href"));
+			$("article").removeClass("expanded");
+			$article.addClass("expanded");
+			setTimeout(function(){
+				$("html, body").animate({"scrollTop": $article.offset().top});
+				checkHasExpanded();
+			}, 500);
+		});
+		{% endif %}
 	});
 	</script>
 </body>

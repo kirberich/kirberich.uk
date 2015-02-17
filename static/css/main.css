@@ -28,13 +28,6 @@ svg {
 	position: absolute;
 }
 
-article header h2 {
-	display: inline-block;
-}
-article header time {
-	margin-left: 5px;
-}
-
 .img-rounded {
 	border-radius: 5px;
 }
@@ -44,15 +37,20 @@ article header time {
 }
 
 aside {
+	display: none;
 	position: absolute;
 	left: 0px;
 	height: 100%;
 	width: 150px;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.85);
 	z-index: 1;
 
 	/* Solve weird chrome bug making semi-transparent white background gray */
 	transform: translateZ(0);
+}
+
+.has-expanded aside {
+	display: block;
 }
 
 aside ul {
@@ -64,6 +62,10 @@ aside ul {
 aside li {
 	list-style: none;
 	margin-bottom: 5px;
+}
+
+aside a.active {
+	font-weight: bold;
 }
 
 footer {
@@ -82,6 +84,24 @@ article {
 	width: 100%;
 	position: relative;
 	overflow: hidden;
+
+	-webkit-transition: max-height 0.5s;
+	transition: max-height 0.5s;
+}
+
+.article-list article {
+	max-height: 50px;
+}
+
+.article-list article.expanded {
+	max-height: 2000px;
+}
+
+article header h2 {
+	display: inline-block;
+}
+article header time {
+	margin-left: 5px;
 }
 
 article header a {
@@ -106,11 +126,14 @@ article header {
 
 article .article-wrapper{
 	position: relative;
-	padding-left: 160px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	box-sizing: border-box;
 	text-align: center;
+}
+
+.has-expanded article .article-wrapper {
+	padding-left: 160px;
 }
 
 article:before {
