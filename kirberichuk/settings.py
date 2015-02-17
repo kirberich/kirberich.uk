@@ -115,7 +115,7 @@ STATIC_URL = '/static/'
 
 CSP_STYLE_SRC = ("'self'", "'unsafe-inline'", "*.googleapis.com", "netdna.bootstrapcdn.com")
 CSP_FONT_SRC = ("'self'", "*.gstatic.com", "netdna.bootstrapcdn.com")
-CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline", "'unsafe-eval'", "code.jquery.com", "netdna.bootstrapcdn.com", "*.google-analytics.com")
+CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'", "'unsafe-eval'", "code.jquery.com", "netdna.bootstrapcdn.com", "*.google-analytics.com")
 CSP_IMG_SRC = ("*",)
 CSP_FRAME_SRC = ("'self'", "www.youtube.com",)
 from djangae.contrib.gauth.settings import *
